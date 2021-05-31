@@ -16,4 +16,4 @@ class HomePage(ListView):
 
 class AdDetail(DetailView):
     model = Ad
-    template_name = 'ad_detail.html'
+    template_name = 'detail.html'

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="../media/static/css/base.css">
+    {% block links %}{% endblock %}
+</head>
+<body>
+    <header>
+        <section class="container header-section">
+            <h1><a href="{% url 'index' %}">HouseSale</a></h1>
+            {% if request.user.is_authenticated %}
+            <div class="profile-link"></div>
+            {% else %}
+            <button id="autorization-button">Авторизоваться</button>
+            {% endif %}
+        </section>
+    </header>
+    
+    {% block content %}
+    {% endblock %}
+
+    {% block scripts %}
+    {% endblock %}
+
+    <div id="autorization-form" title="Авторизация">
+        <form action="" method="post" name='autorization'>
+            <span>Имя:</span>
+            <input name="name" type="text">
+            <span>Фамилия:</span>
+            <input name="surname" type="text">
+            <span>Номер телефона:</span>
+            <input name="phone" type="text">
+            <span>Аватар:</span>
+            <input name="avatar" type="image">
+            <span>Почта:</span>
+            <input name="email" type="email">
+            <span>Пароль:</span>
+            <input name="password" type="password">
+            <span>Подтверждение пароля:</span>
+            <input name="password-confirm" type="password">
+
+        </form>
+    </div>
+</body>
+</html>

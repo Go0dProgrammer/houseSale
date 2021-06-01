@@ -1,64 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../media/static/css/base.css">
-    <link rel="stylesheet" href="../media/static/css/detail.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ad.title}}</title>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>HouseSale</h1>
+{% extends "base.html" %}
+
+{% block title %}{{ad.title}}{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="../media/static/css/detail.css">
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <section class="container ad-section">
+        <div class="ad">
+            <p class="title">{{ad.title}}</p>
+            <div class="favorites"></div>
+            <div class="ad-images-slider">
+                <img src="{{ MEDIA_URL }}{{ ad.img.url }}" alt="" class="ad-image">
+            </div>
+            <section class="ad-information">
+                <p class="adres">Адрес: {{ad.city}}, {{ad.street}}, {{ad.house}}</p>
+                <p class="area">Плозадь территории:{{ad.territoryArea}}</p>
+                <p class="house-area">Площадь дома:{{ad.houseArea}}</p>
+            </section>
         </div>
-    </header>
-
-    <div class="content">
-        <section class="container ad-section">
-            <div class="ad">
-                <p class="title">{{ad.title}}</p>
-                <div class="favorites"></div>
-                <div class="ad-images-slider">
-                    <img src="{{ MEDIA_URL }}{{ ad.img.url }}" alt="" class="ad-image">
-                </div>
-                <section class="ad-information">
-                    <p class="adres">Адрес: {{ad.city}}, {{ad.street}}, {{ad.house}}</p>
-                    <p class="area">Плозадь территории:{{ad.territoryArea}}</p>
-                    <p class="house-area">Площадь дома:{{ad.houseArea}}</p>
-                </section>
-            </div>
-            <div class="ad-contacts">
-                <p class="price">{{ad.price}}</p>
-                <div class="chat"></div>
-                <p class="phone"></p>
-                <p class="author">{{ad.author}}</p>
-            </div>
-            <div class="advertisemenet">
-                <p>*реклама*</p>
-            </div>
-        </section>
-    </div>
-
-    <div id="autorization-form" title="Авторизация">
-        <form action="" method="post" name='autorization'>
-            <span>Имя:</span>
-            <input name="name" type="text">
-            <span>Фамилия:</span>
-            <input name="surname" type="text">
-            <span>Номер телефона:</span>
-            <input name="phone" type="text">
-            <span>Аватар:</span>
-            <input name="avatar" type="image">
-            <span>Почта:</span>
-            <input name="email" type="email">
-            <span>Пароль:</span>
-            <input name="password" type="password">
-            <span>Подтверждение пароля:</span>
-            <input name="password-confirm" type="password">
-
-        </form>
-    </div>
-</body>
-</html>
+        <div class="ad-contacts">
+            <p class="price">{{ad.price}}</p>
+            <div class="chat"></div>
+            <p class="phone"></p>
+            <p class="author">{{ad.author}}</p>
+        </div>
+        <div class="advertisemenet">
+            <p>*реклама*</p>
+        </div>
+    </section>
+</div>
+{% endblock %}

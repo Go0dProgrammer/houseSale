@@ -1,38 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Все объявления</title>
-    <link rel="stylesheet" href="../media/static/css/base.css">
-    <link rel="stylesheet" href="../media/static/css/index.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
-    {% load humanize %}
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>HouseSale</h1>
-        </div>
-    </header>
+{% extends "base.html" %}
 
-    <div class="content">
-        <div class="container">
-            <section class="ad-list">
-                {% for ad in all_ads_list %}  
-                    <div class="ad">
-                        <a href="{% url 'ad_detail' ad.slug %}"><img src="{{ MEDIA_URL }}{{ ad.img.url }}" alt="" class="ad-image"></a>
-                        <a href="{% url 'ad_detail' ad.slug %}"><h2 class="ad-title">{{ad.title | truncatechars:40}}</h2></a>
-                        <p class="adres">{{ad.city}}, {{ad.street}}</p>
-                        <p class="price">{{ad.price}}</p>
-                    </div>
-                
-                {% endfor %}
-            </section>
+{% block title %}Все объявления{% endblock %}
 
-        </div>
+{% block links %}
+<link rel="stylesheet" href="../media/static/css/index.css">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet"> 
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="container">
+        <section class="ad-list">
+            {% for ad in all_ads_list %}  
+                <div class="ad">
+                    <a href="{% url 'ad_detail' ad.slug %}"><img src="{{ MEDIA_URL }}{{ ad.img.url }}" alt="" class="ad-image"></a>
+                    <a href="{% url 'ad_detail' ad.slug %}"><h2 class="ad-title">{{ad.title | truncatechars:40}}</h2></a>
+                    <p class="adres">{{ad.city}}, {{ad.street}}</p>
+                    <p class="price">{{ad.price}}</p>
+                </div>
+            {% endfor %}
+        </section>
     </div>
-    <script src="../media/static/js/main.js"></script>
-</body>
-</html>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="../media/static/js/main.js"></script>
+{% endblock %}

@@ -15,7 +15,7 @@
             {% if request.user.is_authenticated %}
             <div class="profile-link"></div>
             {% else %}
-            <button id="autorization-button">Войти</button>
+            <button class="autorization-button">Войти</button>
             {% endif %}
         </section>
     </header>
@@ -26,23 +26,23 @@
     {% block scripts %}
     {% endblock %}
 
-    <div id="autorization-form" title="Авторизация">
+    <div class="autorization-form" title="Авторизация">
+        <p class="autorization-form-header">Авторизация</p>
+        <button class="close"></button>
         <form action="" method="post" class="form-container" name='autorization'>
-            <span>Имя:</span>
+            <label>Имя:</label>
             <input name="name" type="text">
-            <span>Фамилия:</span>
+            <label>Фамилия:</label>
             <input name="surname" type="text">
-            <span>Номер телефона:</span>
+            <label>Номер телефона:</label>
             <input name="phone" type="text">
-            <span>Аватар:</span>
-            <input name="avatar" type="image">
-            <span>Почта:</span>
+            <label>Почта:</label>
             <input name="email" type="email">
-            <span>Пароль:</span>
+            <label>Пароль:</label>
             <input name="password" type="password">
-            <span>Подтверждение пароля:</span>
+            <label>Подтверждение пароля:</label>
             <input name="password-confirm" type="password">
-            <button type="submit" class="btn">Войти</button>
+            <button type="submit" class="autorization-btn">Войти</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Закрыть</button>
         </form>
     </div>

@@ -25,7 +25,7 @@ button {
 header {
     height: 40px;
     width: 100%;
-    m#argin-bottom: 25px;
+    margin-bottom: 25px;
     background-color: #FFEAA4;
     position: fixed;
 }
@@ -41,7 +41,7 @@ header h1 a {
     justify-content: space-between;
     align-items: center;
 }
-#autorization-button {
+.autorization-button {
     background: #cfcfcf;
     background-repeat: 5px;
     border-radius: 10px;
@@ -54,12 +54,87 @@ header h1 a {
 }
 
 /* Autorization form */
-#autorization-form {
+.autorization-form {
     display: none;
+    background-color: rgb(233, 233, 233);
     position: fixed;
     bottom: 0;
     right: 14px;
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+.autorization-form-header {
+    margin-top: 2px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 30px;
+    text-align: center;
 }
 .form-container {
     max-width: 500px;
+    margin-top: 15px;
+}
+input {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    color: #000;
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;  
+    border:none;
+    outline: none;
+}
+label {
+    display: block;
+    margin-left: 32px;
+    margin-bottom: 5px;
+    color: #000;
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+}
+input:focus {
+    color: #000;
+    border-radius: 10px;
+  }
+.autorization-btn {
+    display: block;
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+}
+.close {
+    background-color: rgb(233, 233, 233);
+    position: absolute;
+    right: 15px;
+    top: 0px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.4;
+}
+.close:hover {
+    background-color: rgb(233, 233, 233);
+    opacity: 1;
+    transition: 0.1s;
+}
+.close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 20px;
+    width: 2px;
+    background-color: #333;
+}
+.close:before {
+    transform: rotate(45deg);
+}
+.close:after {
+    transform: rotate(-45deg);
 }

@@ -12,10 +12,10 @@
     <header>
         <section class="container header-section">
             <h1><a href="{% url 'index' %}">HouseSale</a></h1>
-            {% if request.user.is_authenticated %}
+            {% if user.is_authenticated %}
             <div class="profile-link"></div>
             {% else %}
-            <button class="autorization-button">Войти</button>
+            <button class="autorization-button" onclick="openForm()">Войти</button>
             {% endif %}
         </section>
     </header>
@@ -23,28 +23,19 @@
     {% block content %}
     {% endblock %}
 
-    {% block scripts %}
-    {% endblock %}
 
     <div class="autorization-form" title="Авторизация">
         <p class="autorization-form-header">Авторизация</p>
-        <button class="close"></button>
+        <button class="close" onclick="closeForm()"></button>
         <form action="" method="post" class="form-container" name='autorization'>
-            <label>Имя:</label>
-            <input name="name" type="text">
-            <label>Фамилия:</label>
-            <input name="surname" type="text">
-            <label>Номер телефона:</label>
-            <input name="phone" type="text">
             <label>Почта:</label>
-            <input name="email" type="email">
+            <input name="name" type="text">
             <label>Пароль:</label>
             <input name="password" type="password">
-            <label>Подтверждение пароля:</label>
-            <input name="password-confirm" type="password">
             <button type="submit" class="autorization-btn">Войти</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Закрыть</button>
         </form>
     </div>
+
+    <script src="../media/static/js/main.js"></script>
 </body>
 </html>

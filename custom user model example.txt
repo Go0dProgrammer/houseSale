@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/43055664/how-to-add-custom-user-model-in-admin-panel

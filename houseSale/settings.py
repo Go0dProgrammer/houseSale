@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ads.apps.AdsConfig',
-    'accounts.apps.AccountsConfig', #my ADS model 
+    'ads.apps.AdsConfig', #my ADS model 
 ]
 
 MIDDLEWARE = [
